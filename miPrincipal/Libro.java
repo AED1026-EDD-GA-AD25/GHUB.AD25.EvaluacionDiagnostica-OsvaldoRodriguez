@@ -8,8 +8,10 @@ public class Libro{
     public Libro(){
         this.autor = "No definido";
         this.titulo = "No definido";
+        this.anio = 0;
 
     }
+
     
     
     public Libro(String titulo, String autor, int anio){
@@ -18,7 +20,7 @@ public class Libro{
         this.anio = anio;
     }
 
-    /*gettes y setteres */
+    /*getters y setters */
     public String gettitulo(){
         return titulo;
     }
@@ -37,6 +39,11 @@ public class Libro{
     public void setanio(int anio){
         this.anio = anio;
     }
+    @Override
+    public String toString(){
+        return "Libro : "+titulo+", "+autor+", "+anio;
+    }
+    
 
 
 }

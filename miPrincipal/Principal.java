@@ -2,7 +2,7 @@ package miPrincipal;
 
 public class Principal {
     public String getGreeting() {
-        return "Hola m!";
+        return "Hola mundo!";
     }
 
     public static void main(String[] args) {
