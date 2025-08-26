@@ -24,18 +24,27 @@ public class Principal {
                 titulo=sc.nextLine();
                 System.out.println("Proporciona año de publicacion: ");
                 anio=sc.nextInt();
+                Libro libro = new Libro(titulo, autor, anio);
+                inventarioLibros.agregar(libro);
                 break;
                 case 2:
                 System.out.println("Proporcion autor del libro: ");
                 autor=sc.nextLine();
-                Libro libro = new Libro(titulo, autor, anio);
-                inventarioLibros.agregar(libro);
+                Libro libroBuscado;
+                libroBuscado = inventarioLibros.buscar(autor);
+                if(libroBuscado != null){
+                    System.out.println("Libro Encontrado "+libroBuscado);
+                }else{
+                    System.out.println("Libro no encontrado ");
+                }
+                /*Libro libro = new Libro(titulo, autor, anio);
+                inventarioLibros.agregar(libro);*/
                 break;
                 case 3:
                 inventarioLibros.mostrar(); 
                 break;   
                 default:
-                    break;
+                break;
             }
         } while (opc !=0);
 

@@ -27,6 +27,12 @@ public class InventarioLibros{
     }
     /*busca en la lista un libro por autor, si no retorna null  */
     public Libro buscar(String autor){
+        for(int i=0;i<contador;i++){
+            if(listaLibro[i].getautor().equalsIgnoreCase(autor)){
+                return listaLibro[i];
+            }
+        }
+        /*si llega a este lugar, es porque el libro deseado con el autor no existe  */
         return null;
 
     }
@@ -34,6 +40,7 @@ public class InventarioLibros{
     public void mostrar(){
         for(int i=0;i<contador;i++){
             System.out.println(listaLibro[i]);
+
         }
 
     }
