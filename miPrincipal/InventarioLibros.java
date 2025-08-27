@@ -1,5 +1,9 @@
 package miPrincipal;
 
+import static org.junit.Assert.assertArrayEquals;
+
+import java.util.List;
+
 public class InventarioLibros{
     Libro listaLibro[];//creando arreglo de libro
     int contador;
@@ -26,14 +30,18 @@ public class InventarioLibros{
         
     }
     /*busca en la lista un libro por autor, si no retorna null  */
-    public Libro buscar(String autor){
+    public Libro[] buscar(String autor){
+        Libro[] libroBuscado = new Libro[listaLibro.length];
+        int contEncontrados =0;
         for(int i=0;i<contador;i++){
             if(listaLibro[i].getautor().equalsIgnoreCase(autor)){
-                return listaLibro[i];
+                libroBuscado[contEncontrados++]=listaLibro[i];
+
+
             }
         }
         /*si llega a este lugar, es porque el libro deseado con el autor no existe  */
-        return null;
+        return libroBuscado;
 
     }
     /*muestra por pantalla toda la lista de libros */
@@ -44,6 +52,7 @@ public class InventarioLibros{
         }
 
     }
+
     
     
 
